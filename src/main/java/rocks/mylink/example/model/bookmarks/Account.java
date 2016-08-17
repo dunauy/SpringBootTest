@@ -27,6 +27,15 @@ public class Account {
     @OneToMany(mappedBy = "account")
     protected Set<Bookmark> bookmarks = new HashSet<Bookmark>();
 
+    Account() { // JPA only
+
+    }
+
+    public Account (String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
 
     public Long getId() {
         return id;
